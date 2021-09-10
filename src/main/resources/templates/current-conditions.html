@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Current Weather</title>
+</head>
+<body>
+
+<div>
+    <h3>Current Weather</h3>
+    <p th:text="${currentWeather.description}">Description</p>
+    <h3>Temperature</h3>
+    <p th:text="${currentWeather.temperature} + ' &#8457;'">Temperature</p>
+    <h3>Feels Like</h3>
+    <p th:text="${currentWeather.feelsLike} + ' &#8457;'">Feels Like</p>
+    <h3>Wind Speed</h3>
+    <p th:text="${currentWeather.windSpeed} + ' mph  ' + ${currentWeather.windDirection}"></p>
+    <h3>Current Moon Fraction</h3>
+    <p th:text="${currentAstronomy.moonFraction}">Moon Fraction</p>
+    <h3>Current Moon Phase</h3>
+    <p th:text="${currentAstronomy.currentMoonPhase}">Current Moon Phase</p>
+    <h3>Next Moon Phase</h3>
+    <p th:text="${currentAstronomy.closestMoonPhase}">Closest Moon Phase</p>
+    <h3>Moon Rise</h3>
+    <p th:text="${currentAstronomy.moonRise}">Moon Rise</p>
+    <h3>Moon Set</h3>
+    <p th:text="${currentAstronomy.moonSet}">Moon Set</p>
+    <h3>Sun Rise</h3>
+    <p th:text="${currentAstronomy.sunRise}">Sun Rise</p>
+    <h3>Sunset</h3>
+    <p th:text="${currentAstronomy.sunSet}">Sunset</p>
+    <h3>Tide Height</h3>
+    <p th:text="${currentExtremeTide.height} + ' m'">Tide Height</p>
+    <h3>Tide Time</h3>
+    <p th:text="${currentExtremeTide.time}">Tide Time</p>
+    <h3>Tide Type</h3>
+    <p th:text="${currentExtremeTide.type}">Tide Type</p>
+    <h3>Solar Radiation Check Time</h3>
+    <p th:text="${currentSolar.time}">Solar Radiation Check Time</p>
+    <h3>UV Index</h3>
+    <p th:text="${currentSolar.uvIndex}">UV Index</p>
+    <h3>Downward ShortWave Radiation Flux</h3>
+    <p th:text="${currentSolar.downwardShortWaveRadiationFlux}">Downward ShortWave Radiation Flux</p>
+</div>
+</body>
+</html>
