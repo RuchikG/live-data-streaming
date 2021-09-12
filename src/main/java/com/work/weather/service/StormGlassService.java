@@ -90,9 +90,9 @@ public class StormGlassService {
     private CurrentSolar convertSolar(ResponseEntity<String> response){
         try {
             JsonNode root = objectMapper.readTree(response.getBody());
-            return new CurrentSolar(root.path("data").get(0).path("time").asText(),
-                    ((root.path("data").get(0).path("uvIndex").path("noaa").asDouble()) + (root.path("data").get(0).path("uvIndex").path("sg").asDouble())) / 2,
-                    ((root.path("data").get(0).path("uvIndex").path("noaa").asDouble()) + (root.path("data").get(0).path("uvIndex").path("sg").asDouble())) / 2);
+            return new CurrentSolar(root.path("hours").get(0).path("time").asText(),
+                    ((root.path("hours").get(0).path("uvIndex").path("noaa").asDouble()) + (root.path("hours").get(0).path("uvIndex").path("sg").asDouble())) / 2,
+                    ((root.path("hours").get(0).path("uvIndex").path("noaa").asDouble()) + (root.path("hours").get(0).path("uvIndex").path("sg").asDouble())) / 2);
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Error parsing JSON", e);
         }
