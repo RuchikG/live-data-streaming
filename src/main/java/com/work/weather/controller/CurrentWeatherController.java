@@ -44,8 +44,8 @@ public class CurrentWeatherController {
         return modelAndView;
     }
 
-    @RequestMapping("/message")
+    @RequestMapping(name = "/message", method = RequestMethod.GET)
     public String homePage() {
-        return "/message";
+        return "/message.html";
     }
 }
