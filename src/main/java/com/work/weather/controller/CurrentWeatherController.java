@@ -46,8 +46,8 @@ public class CurrentWeatherController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/message", method = RequestMethod.GET)
-    public ModelAndView messageBoard(ModelAndView modelAndView) {
-        return modelAndView;
+    @RequestMapping("/message")
+    public String homePage() {
+        return "/message";
     }
 }
